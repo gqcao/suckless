@@ -14,6 +14,14 @@ static unsigned int gappov    = 30;       /* vert outer gap between windows and 
 static int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
+
+/*  Display modes of the tab bar: never shown, always shown, shown only in  */
+/*  monocle mode in the presence of several windows.                        */
+/*  Modes after showtab_nmodes are disabled.                                */
+enum showtab_modes { showtab_never, showtab_auto, showtab_nmodes, showtab_always};
+static const int showtab			= showtab_auto;        /* Default tab bar show mode */
+static const int toptab				= False;               /* False means bottom tab bar */
+
 static char *fonts[]          = { "monospace:size=10", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"  };
 static char dmenufont[]       = "monospace:size=10";
 
@@ -114,6 +122,7 @@ static const Key keys[] = {
         { MODKEY|ShiftMask,             XK_Return, togglescratch,  {.v = scratchpadcmd } },
         { MODKEY,			XK_f,      spawn,          {.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY,                       XK_w,      tabmode,        {-1} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -182,5 +191,6 @@ static const Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+	{ ClkTabBar,            0,              Button1,        focuswin,       {0} },
 };
 
