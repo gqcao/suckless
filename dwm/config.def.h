@@ -115,6 +115,8 @@ ResourcePref resources[] = {
 		{ "smartgaps",		INTEGER, &smartgaps },
 };
 
+#include "shift-tools.c"
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -158,6 +160,10 @@ static const Key keys[] = {
 	{ 0,                       XK_F11,    togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+	{ Mod1Mask|ControlMask,         XK_h, shiftviewclients,    { .i = -1 } },
+	{ MODKEY,                       XK_Page_Up, shiftview,     { .i = -1 } },
+	{ Mod1Mask|ControlMask,         XK_l,	shiftviewclients,  { .i = +1 } },
+	{ MODKEY,	                XK_Page_Down, shiftview,   { .i = +1 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
