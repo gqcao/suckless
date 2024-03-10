@@ -956,7 +956,7 @@ drawbar(Monitor *m)
 		char *text, *s, ch;
 		drw_setscheme(drw, scheme[SchemeNorm]);
 
-		x = 0;
+		x = -getsystraywidth() - systrayspacing;
 		for (text = s = stext; *s; s++) {
 			if ((unsigned char)(*s) < ' ') {
 				ch = *s;
