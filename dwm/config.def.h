@@ -132,6 +132,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
         { MODKEY|ShiftMask,             XK_Return, togglescratch,  {.v = scratchpadcmd } },
         { MODKEY,			XK_f,      spawn,          {.v = (const char*[]){ BROWSER, NULL } } },
+        { MODKEY,                       XK_n,      spawn,          SHCMD(TERMINAL " -e python /home/gcao/tools/ranger/ranger.py /home/gcao") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_w,      tabmode,        {-1} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
