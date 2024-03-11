@@ -186,7 +186,12 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} }, 
+	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} },
+	{ MODKEY,			XK_minus,	spawn,		SHCMD("amixer -q -D pulse sset Master 5%-; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask,             XK_minus,	spawn,		SHCMD("amixer -q -D pulse sset Master 15%-; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY,			XK_equal,	spawn,		SHCMD("amixer -q -D pulse sset Master 5%+; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask,             XK_equal,	spawn,		SHCMD("amixer -q -D pulse sset Master 15%+; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask,             XK_m,	        spawn,		SHCMD("amixer -q -D pulse sset Master toggle; kill -44 $(pidof dwmblocks)") },
 };
 
 /* button definitions */
