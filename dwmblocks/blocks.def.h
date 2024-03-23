@@ -5,8 +5,8 @@ static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
 	{"", PATH("weather"),           3600,		0},
 	{"", PATH("volume"),            0,		10},
-	{"", PATH("memory"),            30,		1},
-	{"", PATH("disk"),              30,		2},
+	{" ", PATH("memory"),          30,		1},
+	{" ", PATH("disk"),            30,		2},
 	{"", PATH("battery"),           5,		3},
 
 	{"", "date '+%Y-%m-%d %H:%M:%S'",					5,		4},
