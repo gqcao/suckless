@@ -164,6 +164,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
         { MODKEY,                       XK_Pause,  spawn,          SHCMD("sysact") },
         { MODKEY,                       XK_Scroll_Lock, spawn,     SHCMD("slock") },
+	{ 0,                            XK_Print,  spawn,          SHCMD("gnome-screenshot")},
+        { MODKEY,                       XK_Print,  spawn,          SHCMD("gnome-screenshot -i") },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	//{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
