@@ -100,29 +100,30 @@ float alpha = 0.93, alphaUnfocused = 0.8;
 static const char *colorname[] = {
 	/* 8 normal colors */
 	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"#5c5cff",
-	"magenta3",
-	"cyan3",
-	"gray90",
+        "#bf616a", /* red     */
+        "#a3be8c", /* green   */
+        "#ebcb8b", /* yellow  */
+        "#81a1c1", /* blue    */
+        "#b48ead", /* magenta */
+        "#88c0d0", /* cyan    */
+        "#e5e9f0", /* white   */
+
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+        "#4c566a", /* black   */
+        "#bf616a", /* red     */
+        "#a3be8c", /* green   */
+        "#ebcb8b", /* yellow  */
+        "#81a1c1", /* blue    */
+        "#b48ead", /* magenta */
+        "#8fbcbb", /* cyan    */
+        "#eceff4", /* white   */
+
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+        "#d8dee9", /* default foreground colour */
 	"black",
 };
 
